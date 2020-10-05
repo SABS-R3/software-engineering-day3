@@ -22,18 +22,27 @@ Executable code is for machines, whilst source code is for humans. Generally spe
 
 ## Set up training materials
 
-So let's download the training materials for this material from the GitHub code repository online. Go to `https://github.com/sabs-r3/module01_se_day4` in a browser and select the green `Clone or download` button, and then select `Download ZIP`. This will download all the files within a single archive file. After it's finished downloading, we need to extract all files from the archive. Find where the file has been downloaded to, then start a terminal, and assuming the file has downloaded to e.g. `/home/sabs-r3/Downloads`, do the following within the shell:
+So let's download the training materials for this material from the GitHub code repository online. Go to [https://github.com/SABS-R3/2020-software-engineering-day3/tree/gh-pages](https://github.com/SABS-R3/2020-software-engineering-day3/tree/gh-pages) in a browser (any will do, although Firefox is already installed on the provided laptops). Select the green `Code` button, and then select `Download ZIP`, and then in Firefox selecting `Save File` at the dialogue prompt. This will download all the files within a single archive file. After it's finished downloading, we need to extract all files from the archive. Find where the file has been downloaded to (on the provided laptops this is `/home/sabsr3/Downloads`, then start a terminal. You can start a terminal by right-clicking on the desktop and selecting `Open in Terminal`. Assuming the file has downloaded to e.g. `/home/sabsr3/Downloads`, type the following within the Terminal shell:
 
 ~~~
 cd ~
-unzip /home/sabs-r3/Downloads/module01_se_day4-gh-pages.zip
+unzip /home/sabsr3/Downloads/2020-software-engineering-day3-gh-pages.zip
 ~~~
 {: .language-bash}
 
-This will unpack the archive in your home directory, within a subdirectory called `module01_se_day4-gh-pages`. Change to the `code` directory within that new directory:
+The first `cd ~` command *changes our working directory* to our home directory (on the provisioned laptops, this is `/home/sabsr3`).
+
+The second command uses the unzip program to unpack the archive in your home directory, within a subdirectory called `2020-software-engineering-day1-gh-pages`. This subdirectory name is a little long to easily work with, so we'll rename it to something shorter:
 
 ~~~
-cd module01_se_day4-gh-pages/code
+mv 2020-software-engineering-day3-gh-pages 2020-se-day3
+~~~
+{: .language-bash}
+
+Change to the `code` directory within that new directory:
+
+~~~
+cd 2020-se-day3/code
 ~~~
 {: .language-bash}
 
