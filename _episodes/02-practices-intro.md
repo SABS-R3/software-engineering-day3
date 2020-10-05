@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Development Practices"
-teaching: 10
-exercises: 40
+teaching: 15
+exercises: 45
 questions:
 - "What should I know to write better code?"
 objectives:
