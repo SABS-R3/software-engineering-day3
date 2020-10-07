@@ -50,7 +50,7 @@ cd 2020-se-day3/code
 
 The careful selection of names is very important to understanding. Cryptic names of components, modules, classes, functions, arguments, exceptions and variables can lead to confusion about the role that these components play.
 
-Good naming is fundamental to good design, because source code represents the most detailed version of our design. Compare and contrast the ease with which the following statements can be understood:
+Good naming is fundamental to good design, because source code represents the most detailed version of our design. Compare and contrast the ease with which the following statements can be understood (here for illustrative purposes only):
 
 ~~~
 out(p(f(v), 2) + 1)
@@ -229,8 +229,6 @@ The format we're using here for our examples is reST.
 > - Add comments and docstrings to describe behaviour.
 >
 > A reference implementation of the previous Managing Academic code example can be found in the `code` directory, so feel free to use and amend these if you prefer.
->
-> Briefly discuss and compare your improvements with someone next to you. Based on your discussions, can you further improve your code in the above ways?
 {: .challenge}
 
 Commenting and adding docstrings to code is important to describe how our code behaves. Another approach to improve the readability and understandability of our code is *refactoring*, a process where we change the code itself, which we've touched on with renaming. There are other ways we can refactor our code by addressing issues with control flow and modularity, which we'll look at later.
