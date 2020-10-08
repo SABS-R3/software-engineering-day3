@@ -16,7 +16,7 @@ keypoints:
 - "Find the right balance between adopting practices and research progress."
 ---
 
-See topic [video lecture](FIXME), and [PowerPoint slides](../slides/3.1-Development-Practices.pptx) used with per-slide notes.
+See topic [video lecture](https://youtu.be/gF52o1EA25Q), and [PowerPoint slides](../slides/3.1-Development-Practices.pptx) used with per-slide notes.
 
 > ## Action Stations!
 >
