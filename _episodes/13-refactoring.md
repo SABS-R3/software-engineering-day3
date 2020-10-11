@@ -1,7 +1,7 @@
 ---
 title: "Refactoring"
-teaching: 30
-exercises: 30
+teaching: 0
+exercises: 60
 questions:
 - "What is refactoring?"
 - "How should I structure code to separate functionality?"
@@ -200,7 +200,7 @@ The second axis is whether the language is **strongly typed** or **weakly typed*
 Strongly typed languages do not allow the type of a value (not the variable, but the value it holds) to be converted without an explicit cast, whereas weakly typed languages do.
 
 In addition to this, the type system in Python is often referred to as **duck typing**, after the duck test "if it walks like a duck and it quacks like a duck, it's a duck".
-This means that the type of an object in most cases does not actually matter, but rather the important thing is that the object 
+This means that the type of an object in most cases does not actually matter, but rather the important thing is that the object
 
 Type annotations are a slightly devisive topic within the Python community, with some people claiming they increase the clarity of code, while others claim that they undermine one of the main benefits of Python's dynamic typing.
 Both of these viewpoints are to some degree true, so before using type annotations it is important to consider whether they are a net benefit to your code.
@@ -325,4 +325,3 @@ See [JSON library](https://docs.python.org/3.7/library/json.html).
 {: .challenge}
 
 {% include links.md %}
-

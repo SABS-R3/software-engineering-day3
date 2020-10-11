@@ -1,7 +1,7 @@
 ---
 title: "Community Practices"
-teaching: 40
-exercises: 40
+teaching: 0
+exercises: 90
 questions:
 - "Why should I follow community standards?"
 - "What community standards exist for Python and C++?"
@@ -280,4 +280,3 @@ That's enough for now, we'll be seeing much more about it soon.
 
 
 {% include links.md %}
-
