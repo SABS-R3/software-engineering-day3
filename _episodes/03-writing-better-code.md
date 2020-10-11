@@ -70,9 +70,7 @@ There are common naming recommendations:
 
 ### Comments
 
-Source code tells the reader what the code does. Comments allow us to provide the reader with additional information
- - it's always a good idea to keep others in mind when writing code. As a reminder, you can add a comment using
-  `#` symbol on a line:
+Source code tells the reader what the code does. Comments allow us to provide the reader with additional information - it's always a good idea to keep others in mind when writing code. As a reminder, you can add a comment using the `#` symbol on a line:
 
 ~~~
 def fahr_to_cels(fahr):
