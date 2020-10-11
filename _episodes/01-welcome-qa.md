@@ -9,6 +9,6 @@ objectives:
 keypoints:
 ---
 
-See the [welcome video](https://youtu.be/RuXNrXiXv98) and matching [slides](../slides/3.2-Community-Practices-and-Refactoring.pptx).
+See topic [slides](../slides/01-introduction.pdf).
 
 {% include links.md %}
