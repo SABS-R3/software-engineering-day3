@@ -32,7 +32,7 @@ unzip /home/sabsr3/Downloads/2020-software-engineering-day3-gh-pages.zip
 
 The first `cd ~` command *changes our working directory* to our home directory (on the provisioned laptops, this is `/home/sabsr3`).
 
-The second command uses the unzip program to unpack the archive in your home directory, within a subdirectory called `2020-software-engineering-day1-gh-pages`. This subdirectory name is a little long to easily work with, so we'll rename it to something shorter:
+The second command uses the unzip program to unpack the archive in your home directory, within a subdirectory called `2020-software-engineering-day3-gh-pages`. This subdirectory name is a little long to easily work with, so we'll rename it to something shorter:
 
 ~~~
 mv 2020-software-engineering-day3-gh-pages 2020-se-day3
@@ -90,7 +90,7 @@ def fahr_to_cels(fahr):
 {: .language-python}
 
 Python doesn't have any multi-line comments, like you may have seen in other languages like C++ or Java. However, there
- are ways to do it using *docstrings*, which are recommended in certain cases, as we'll see in a moment. 
+ are ways to do it using *docstrings*, which are recommended in certain cases, as we'll see in a moment.
 
 A good rule of thumb is to assume that someone will **always** read your code at a later date, and this includes a future version of yourself. It can be easy to forget why you did something a particular way in six months time.
 
