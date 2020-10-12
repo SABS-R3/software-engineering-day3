@@ -24,15 +24,24 @@ keypoints:
 > > -- Wikipedia - Code refactoring
 {: .callout}
 
-While most IDEs provide some support for automated refactoring, this tends not to work so well with dynamically typed languages like Python.
+While most IDEs and code editors provide some support for automated refactoring, this tends not to work so well with dynamically typed languages like Python.
 When refactoring a statically typed language, it is easy for the IDE to recognise that one use of a variable, function or class is the same as another, since any use of the same identifier across multiple files must have been explicitly identified (by e.g. including the header files).
 Dynamic languages, like Python, do not have this requirement, so it is much more difficult to check that an identifier refers to the same object.
+
+The process of refactoring has a basis in the Structured Programming paradigm.
+Since we are aiming to improve the structure of our code without changing the behaviour, it is useful to think of our code as a hierarchy of structured blocks.
+Within each structured block, we think about the control flow - the order in which statements are executed.
+If the control flow is guaranteed to enter at the top of the block, and leave at the bottom of the block, then we can treat that block as a single entity and rearrange it without needing to worry so much about its interactions with the rest of the code.
+
+For a visual representation of this, see [this section](https://www.youtube.com/watch?v=SFv8Wm2HdNM&t=2683) of Kevlin Henney's talk on Structured Programming.
+In this section he demonstrates how a rearrangement of the structure of the code results in a block form, where much of the detail can be ignored and we have greater freedom to perform refactoring.
+Don't worry if you don't understand the code sample he's using, that's much less important than the structure itself.
 
 ## Modules
 
 So far we've been structuring our code within a single file, but what happens when this file gets too long to manage easily?
 
-As we've seen with Numpy and a few other bits from the Python standard library, in Python we're able to separate out code into a **library** and **import** it into the main part of our program.
+As we've seen with NumPy and a few other bits from the Python standard library, in Python we're able to separate out code into a **library** and **import** it into the main part of our program.
 Some equivalent of this is possible in most programming languages (e.g. `#include` in C++ after the linker has run).
 
 Once again, we'll use the temperature conversion code to illustrate this:
@@ -80,7 +89,7 @@ print(conversions.fahr_to_kelvin(32), 'K')
 ~~~
 {: .output}
 
-### Packages
+## Packages
 
 As well as modules, we also have **packages** as a way of structuring our Python files.
 A Python package is really just a directory with a set of modules in it, but with a special Python file `__init__.py`
@@ -140,7 +149,7 @@ print(conversions.fahr_to_kelvin(32), 'K')
 > ## Security Alert!
 >
 > When using packages that other people have developed it's important to keep up to date with any security fixes.
-> This is particularly important if you are running a service such as a website - any running code exposed to the internet *will* be attacked.
+> This is particularly important if you are running a service such as a website - any service exposed to the internet *will* be attacked frequently.
 >
 {: .callout}
 
@@ -174,8 +183,11 @@ print(conversions.fahr_to_kelvin(32), 'K')
 
 ## Type Annotations
 
-When talking about type systems in different programming languages, there are two distinctions to be made.
+One of the main things we use to describe the differences between programming languages is the **type sytem** that they use.
+The type system is how the language represents and manages different kinds (or types) of data.
+Types may be primitive types built in to the language such as `int` or `float`, up to complex custom types such as the classes that we define ourselves.
 
+When talking about type systems in different programming languages, there are two distinctions to be made.
 The first is whether the language is **staticly typed** or **dynamically typed**.
 In statically typed languages, each variable must have a type, usually set when it is defined - C++ is a statically typed language:
 
@@ -183,9 +195,9 @@ In statically typed languages, each variable must have a type, usually set when 
 int count = 0;
 const double x = 10.;
 ~~~
-{: .language-cpp}
+{: .source}
 
-In contrast, a dynamically typed language like Python, does not need / allow variables to have a type defined as the variable may hold multiple values of multiple different types over its lifetime:
+In contrast, a dynamically typed language like Python, does not need / allow variables to have a type defined as the variable may hold multiple values of multiple different types over its lifetime.
 
 ~~~
 count = 0
@@ -196,16 +208,18 @@ x = print
 ~~~
 {: .language-python}
 
+Strictly speaking, variables in Python do not *hold* a value, they are **bound** to a value, which is why we can rebind it to refer to an object of a different type.
+
 The second axis is whether the language is **strongly typed** or **weakly typed**.
 Strongly typed languages do not allow the type of a value (not the variable, but the value it holds) to be converted without an explicit cast, whereas weakly typed languages do.
 
 In addition to this, the type system in Python is often referred to as **duck typing**, after the duck test "if it walks like a duck and it quacks like a duck, it's a duck".
-This means that the type of an object in most cases does not actually matter, but rather the important thing is that the object
+This means that the type of an object in most cases does not actually matter, but rather the important thing is that the object has the attributes and behaviours that are required of it.
 
 Type annotations are a slightly devisive topic within the Python community, with some people claiming they increase the clarity of code, while others claim that they undermine one of the main benefits of Python's dynamic typing.
 Both of these viewpoints are to some degree true, so before using type annotations it is important to consider whether they are a net benefit to your code.
 
-Type annotations make Python functions (and classes, etc.) look a little more like C++ functions.
+Type annotations make Python functions (and classes, etc.) look a little more like C++ code.
 Function parameters are annotated with a colon followed by the type, while return values are annotated with an arrow then the type after the function parentheses.
 We can also add type annotations to ReST docstrings.
 
@@ -236,7 +250,7 @@ def fahr_to_kelvin(fahr: float) -> float:
 ~~~
 {: .language-python}
 
-One of the advantages of an IDE like PyCharm is support for things like type annotations.
+One of the advantages of an intelligent editor like VSCode is support for things like type annotations.
 If you try to use an annotated function with arguments of a different type, we should see a highlighted complaint.
 
 To see how type annotations actually behave in practice, lets write another, very simple, function:
@@ -256,9 +270,11 @@ HelloWorld!
 ~~~
 {: .output}
 
-As we can see, although PyCharm tells us that we're using the function incorrectly when we call it with two strings instead of floats, the function does actually work.
+As we can see, although our editor might tell us that we're using the function incorrectly when we call it with two strings instead of floats, the function does actually work.
 This is because type annotations in Python aren't quite like they are in a statically typed language.
-The type annotations we provide are not used to perform checking at runtime, but are an indicator that tools can use to inform us of potential errors.
+The type annotations we provide are just suggestions and are not used to perform checking at runtime, but are an indicator that tools can use to inform us of potential errors.
+
+If we want to use these type annotations as part of our testing, we can use a tool such as the [mypy](http://mypy-lang.org/) static type checker.
 
 ## Configuration Files
 
@@ -322,6 +338,19 @@ See [JSON library](https://docs.python.org/3.7/library/json.html).
 > Once you've fixed all of the style issues, try using some of the techniques we've discussed in this session (modules and type annotations) to make further improvements to the code.
 > The focus here is on improving reusability and reliability.
 >
+{: .challenge}
+
+> ## Fixing More Bad Code
+>
+> Pick some previous code we have produced or use the [rf4](https://github.com/softwaresaved/rf4) example.
+>
+> How can this code be improved?
+> Which improvements are most important?
+> If you had to improve this code as a collaborative project, how would you plan this?
+>
+> Discuss these questions in your small groups: does everyone agree on which improvements are most important?
+>
+> If you have finished everything else and have time left, try to make some of these improvements.
 {: .challenge}
 
 {% include links.md %}
