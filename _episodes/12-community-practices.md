@@ -1,7 +1,7 @@
 ---
 title: "Community Practices"
 teaching: 0
-exercises: 90
+exercises: 75
 questions:
 - "Why should I follow community standards?"
 - "What community standards exist for Python and C++?"
@@ -288,15 +288,15 @@ In order to help us format our code, we generally follow guidelines known as **s
 A style guide is a set of conventions that we agree upon with our colleagues, to ensure that everyone contributing to the same project is producing code which looks similar.
 
 While a group of developers may choose the write and agree upon a new style guide unique to each project, in practice many programming languages or problem domains have a single style guide or set of style guides which is adopted almost universally.
-For example in C++, popular style guides include the [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) and the [JSF C++ Coding Standards](http://www.stroustrup.com/JSF-AV-rules.pdf).
-The [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines) are an extensive reference intended more for the creators of software engineering tools, but may be worth having a look at.
+For example in C++, the most popular is probably [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html), but there are also a number of others with popularity in a particular domain.
+The [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines) are an extensive reference intended more for the creators of software engineering tools, but may also be worth having a look at.
 In Python, although we do have a choice of style guides available, the [**PEP8**](https://www.python.org/dev/peps/pep-0008/) style guide is used in almost all cases.
 
 As you may have noticed by now, one of the advantages of using a proper code editor like VSCode is that we get recommendations for formatting our code.
 The recommendations made by VSCode and and many other editors are mostly taken from the PEP8 style guide.
 
-There are also tools, known as **linters**, whic exist to validate your code against particular community standards, but the main two to be aware of for Python are:
-- `pycodestyle` (formerly known as `pep8`)
+There are also tools, known as **linters**, whic exist to validate your code against particular community standards, but two of the main ones to be aware of for Python are:
+- `flake8` (actually a combination of `pyflakes` and `pycodestyle`)
 - `pylint`
 
 We'll also have a look at `cpplint` for C++ which validates your code against the Google C++ style guide.
@@ -306,20 +306,33 @@ One example of this is checking that there are no unused or undefined variables 
 Because of this, the process of linting is particularly important for languages which are not typically compiled, such as Python.
 Some of the benefits of linting, such as checking for undefined variables, happen at compile time when using a compiled language such as C++, but some of the other checks are still useful when using compiled languages.
 
-Since the Python linters `pycodestyle` (formerly `pep8`) and `pylint` are not part of the standard Python distribution, we're going to have to install them outselves.
+Since the Python linters `flake8` and `pylint` are not part of the standard Python distribution, we're going to have to install them ourselves.
 The C++ linter `cpplint` is actually written in Python, so we'll install that as well.
 So, using `pip` again:
 
 ~~~
 cd code
 source venv/bin/activate
-pip install pycodestyle pylint cpplint
+pip install flake8 pylint cpplint
 ~~~
 {: .language-bash}
 
-When using `pip` we can install packages globally, or for only our user account - we'll install it just for our user account, since that won't interfere with anyone else if we're using a shared computer.
+We can run these tools over our code from the command line:
 
-We'll come back to linting this afternoon when we look at refactoring...
+~~~
+flake8 academic.py
+~~~
+{: .language-bash}
+
+But we can also integrate them with our editor.
+In VSCode, if we press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and type `linter`, we get a list of linters that VSCode can work with.
+From this list, select `flake8`, and now every time we save our code, we should get highlights where Flake8 produces a warning.
+
+If VSCode says it can't find Flake8, it might be because it's not detecting our virtual environment properly.
+In this case, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> again and this time type `interpreter`.
+From the 'Python: Select Interpreter' menu we can tell VSCode which interpreter to use by selecting one of the options, or navigating to `code/venv/bin/python3` with the file explorer.
+
+We'll come back to linting this afternoon in an exercise on refactoring...
 
 ### Licensing
 

@@ -1,7 +1,7 @@
 ---
 title: "Refactoring"
 teaching: 0
-exercises: 60
+exercises: 75
 questions:
 - "What is refactoring?"
 - "How should I structure code to separate functionality?"
@@ -298,6 +298,7 @@ academics = [
         'papers': [
             {
                 'title': 'Bob writes about science',
+            }
         ]
     }
 ]
@@ -324,7 +325,7 @@ See [JSON library](https://docs.python.org/3.7/library/json.html).
 > ~~~
 > {: .language-bash}
 >
-> To run `cpplint` on a C++ file use:
+> If you're familiar with C++, then to run `cpplint` on a C++ file use:
 >
 > ~~~
 > cpplint pi.cpp
@@ -335,12 +336,12 @@ See [JSON library](https://docs.python.org/3.7/library/json.html).
 > Later in the course we'll cover proper software testing, so we can automate these checks, but for now we'll have to check manually.
 > Though this code relies on random numbers, we've set a fixed random seed so that the behaviour is predictable to make testing easier.
 >
-> Once you've fixed all of the style issues, try using some of the techniques we've discussed in this session (modules and type annotations) to make further improvements to the code.
+> Once you've fixed all of the style issues, try using some of the techniques we've discussed over the last few days to make further improvements to the code.
 > The focus here is on improving reusability and reliability.
 >
 {: .challenge}
 
-> ## Fixing More Bad Code
+> ## Fixing More Code
 >
 > Pick some previous code we have produced or use the [rf4](https://github.com/softwaresaved/rf4) example.
 >
