@@ -154,7 +154,13 @@ where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
 {: .output}
 
 The Sphinx quickstart tool provides us with sensible default values, but we need to do a little bit of customisation to `config.py`.
-Open the file `code/docs/source/config.py` and make these changes to the path and add autodoc to the list of extensions:
+Open the file `code/docs/source/config.py` and make the following changes.
+
+We need to un-comment the lines which set up the system path, from `import os` to `sys.path.insert`.
+We also need to change what we're adding to the path to `'../..'`, instead of `'.'` - this means that Sphinx should look two directories above the `config.py` file to find our code.
+Finally, we need to add `'sphinx.ext.autodoc'` to the list of extensions.
+
+After making these changes, the file should look like this:
 
 ~~~
 # Configuration file for the Sphinx documentation builder.
