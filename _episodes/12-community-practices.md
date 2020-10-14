@@ -249,9 +249,11 @@ Indices and tables
 
 Documentation on this part of Sphinx is available at [this link](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html).
 
-Now, we should be ready to build our documentation:
+Now, we should be ready to build our documentation.
+First, change directory into the documentation directory, then we can build it.
 
 ~~~
+cd docs
 make html
 ~~~
 {: .language-bash}
@@ -269,6 +271,12 @@ python -m http.server -d build/html
 
 This tells Python to run the module `http.server` with the server running from the `build/html` directory.
 Then in a web browser navigate to `http://localhost:8000` and you should see your documentation page.
+If this doesn't work, then it might be the case that your build directory is named slightly differently - try running the server with the directory `_build/html`.
+
+~~~
+python -m http.server -d _build/html
+~~~
+{: .language-bash}
 
 If you used your existing code from yesterday for the previous docstring exercises then this page might not have any documentation for the classes in the file `academics.py`
 If this is the case, then copy across your docstrings into the reference version of `academic.py` in today's `code` directory.
@@ -295,7 +303,7 @@ In Python, although we do have a choice of style guides available, the [**PEP8**
 As you may have noticed by now, one of the advantages of using a proper code editor like VSCode is that we get recommendations for formatting our code.
 The recommendations made by VSCode and and many other editors are mostly taken from the PEP8 style guide.
 
-There are also tools, known as **linters**, whic exist to validate your code against particular community standards, but two of the main ones to be aware of for Python are:
+There are also tools, known as **linters**, which exist to validate your code against particular community standards, but two of the main ones to be aware of for Python are:
 - `flake8` (actually a combination of `pyflakes` and `pycodestyle`)
 - `pylint`
 
