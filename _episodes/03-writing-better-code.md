@@ -1,7 +1,7 @@
 ---
 title: "Writing Better Code"
 teaching: 0
-exercises: 60
+exercises: 75
 questions:
 - "How can I make my code more readable and understandable?"
 objectives:
