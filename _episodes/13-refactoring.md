@@ -341,6 +341,8 @@ See [JSON library](https://docs.python.org/3.7/library/json.html).
 > ~~~
 > {: .language-bash}
 >
+> When we do this we should see quite a large number of warnings, each of which is a problem that the linter has identified in our code.
+>
 > Before you make any changes to the code, make sure you run it and make a note of the output - when refactoring it's important that you don't change the behaviour of the code.
 > Later in the course we'll cover proper software testing, so we can automate these checks, but for now we'll have to check manually.
 > Though this code relies on random numbers, we've set a fixed random seed so that the behaviour is predictable to make testing easier.

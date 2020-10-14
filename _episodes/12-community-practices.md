@@ -341,7 +341,9 @@ flake8 academic.py
 ~~~
 {: .language-bash}
 
-But we can also integrate them with our editor.
+We will probably now see a couple of warning messages, where the linter has identified problems in our code, either syntax errors or cases of bad style.
+
+Even more useful, we can often integrate a linter with our chosen code editor.
 In VSCode, if we press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and type `linter`, we get a list of linters that VSCode can work with.
 From this list, select `flake8`, and now every time we save our code, we should get highlights where Flake8 produces a warning.
 
