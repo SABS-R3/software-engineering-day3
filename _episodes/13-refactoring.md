@@ -189,7 +189,7 @@ print(conversions.fahr_to_kelvin(32), 'K')
 
 ## Type Annotations
 
-One of the main things we use to describe the differences between programming languages is the **type sytem** that they use.
+One of the main things we use to describe the differences between programming languages is the **type system** that they use.
 The type system is how the language represents and manages different kinds (or types) of data.
 Types may be primitive types built in to the language such as `int` or `float`, up to complex custom types such as the classes that we define ourselves.
 
