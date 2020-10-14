@@ -12,8 +12,8 @@ objectives:
 - "Use configuration files to separate configuration from code"
 keypoints:
 - "Python uses modules to separate code out of the main file"
-- "Storing configuration data outside of the code makes it easier for others to use your software"
 - "Type annotations may be used to provide extra description about the behaviour of a function"
+- "Storing configuration data outside of the code makes it easier for others to use your software"
 ---
 
 ## Refactoring
@@ -36,6 +36,12 @@ If the control flow is guaranteed to enter at the top of the block, and leave at
 For a visual representation of this, see [this section](https://www.youtube.com/watch?v=SFv8Wm2HdNM&t=2683) of Kevlin Henney's talk on Structured Programming.
 In this section he demonstrates how a rearrangement of the structure of the code results in a block form, where much of the detail can be ignored and we have greater freedom to perform refactoring.
 Don't worry if you don't understand the code sample he's using, that's much less important than the structure itself.
+
+When we're refactoring existing code we're aiming to improve the readability of our code.
+Often what we're doing is breaking up functions or classes which are too complex, so a good rule of thumb is that a function shouldn't be longer than 30 lines.
+Some people take a much stricter view and suggest a limit of 10 lines.
+The exact length isn't particularly important, but the idea is that each function should be responsible for only one task.
+If a function feels too long, it's often because it's trying to do multiple tasks.
 
 ## Modules
 
@@ -352,6 +358,12 @@ See [JSON library](https://docs.python.org/3.7/library/json.html).
 > Discuss these questions in your small groups: does everyone agree on which improvements are most important?
 >
 > If you have finished everything else and have time left, try to make some of these improvements.
+{: .challenge}
+
+> ## Reading Configurations (Optional)
+>
+> Using the documentation for Python's [JSON module](https://docs.python.org/3/library/json.html), try refactoring one of our existing examples to accept input data from a JSON file.
+> For example, in the Academics model, we might use this to read in information about a group of academics and their publications, like we started doing with the Python datastructure at the beginning.
 {: .challenge}
 
 {% include links.md %}
