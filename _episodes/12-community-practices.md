@@ -398,31 +398,6 @@ That's enough for now, we'll be seeing much more about it soon.
 >
 > 1. A few sentences description of what you've found
 > 2. A few sentences on how this benefits users of developers of the software
->
-> > ## Solution
-> > #### Repository itself
-> > - Repo name is the name of the project
-> > - Documentation is extensive and clearly written
-> > - Specific guidance on how to contribute to the project
-> > - Project is clearly licensed
-> > - Many tests - which are run automatically with every change (Continuous Integration)
-> > - GitHub Issues and Pull Request functionality is being used well
-> >
-> > #### README.md
-> > - Has a simple code example
-> > - Has a list of features
-> > - Shows how to install the software
-> > - Has links to further documentation
-> >
-> > #### Code
-> > - Code will structured (though we haven't taught you about structuring projects yet)
-> > - No redundant files
-> > - Docstrings used extensively
-> > - Well commented where docstrings are not sufficient
-> > - Many class, function and variable names are descriptive
-> > - Follows a consistent style
-> {: .solution}
 {: .challenge}
-
 
 {% include links.md %}
