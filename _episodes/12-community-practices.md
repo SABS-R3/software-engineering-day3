@@ -278,6 +278,9 @@ python -m http.server -d _build/html
 ~~~
 {: .language-bash}
 
+Once you're finished with this web server, you can stop it with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+This is the normal way we stop command line programs and should work in almost all cases.
+
 If you used your existing code from yesterday for the previous docstring exercises then this page might not have any documentation for the classes in the file `academics.py`
 If this is the case, then copy across your docstrings into the reference version of `academic.py` in today's `code` directory.
 
