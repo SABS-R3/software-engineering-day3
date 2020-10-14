@@ -130,9 +130,12 @@ If we wish to, we can shorten this a little bit by adding to our package's `__in
 ~~~
 # file: __init__.py
 
-from temperature import fahr_to_celsius, fahr_to_kelvin
+from .temperature import fahr_to_celsius, fahr_to_kelvin
 ~~~
 {: .language-python}
+
+The dot in `.temperature` means, "the module `temperature` in this package".
+Without the dot, Python will look for a `temperature` module outside of the current package, and fail to find it.
 
 So now we can use these functions directly from the package:
 
@@ -194,7 +197,7 @@ The type system is how the language represents and manages different kinds (or t
 Types may be primitive types built in to the language such as `int` or `float`, up to complex custom types such as the classes that we define ourselves.
 
 When talking about type systems in different programming languages, there are two distinctions to be made.
-The first is whether the language is **staticly typed** or **dynamically typed**.
+The first is whether the language is **statically typed** or **dynamically typed**.
 In statically typed languages, each variable must have a type, usually set when it is defined - C++ is a statically typed language:
 
 ~~~
