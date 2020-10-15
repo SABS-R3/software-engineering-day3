@@ -97,13 +97,20 @@ One of the most important things you can do to make it easier for others to use 
 We've just seen docstrings, but wouldn't it be great if you could take the docstrings you've written and turn it into documentation that you can publish online with your code?
 
 Sphinx lets us do exactly that, but it is a little tricky to get set up properly.
-First we need to activate our virtual environment and install Sphinx, then we create a new directory `docs` in which to put our documentation.
-Finally, we use a Sphinx quickstart tool to create the documentation structure for us.
+First we need to make our virtual environment and install Sphinx:
 
 ~~~
-cd code
+cd
+cd 2020-se-day3
+python3 -m venv venv
 source venv/bin/activate
 pip3 install sphinx
+~~~
+{: .language-bash}
+
+Then we create a new directory `docs` in which to put our documentation and use the Sphinx quickstart tool to create the documentation structure for us:
+
+~~~
 mkdir docs
 cd docs
 sphinx-quickstart
@@ -153,11 +160,11 @@ where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
 ~~~
 {: .output}
 
-The Sphinx quickstart tool provides us with sensible default values, but we need to do a little bit of customisation to `config.py`.
-Open the file `code/docs/source/config.py` and make the following changes.
+The Sphinx quickstart tool provides us with sensible default values, but we need to do a little bit of customisation to `conf.py`.
+Open the file `code/docs/source/conf.py` and make the following changes.
 
 We need to un-comment the lines which set up the system path, from `import os` to `sys.path.insert`.
-We also need to change what we're adding to the path to `'../..'`, instead of `'.'` - this means that Sphinx should look two directories above the `config.py` file to find our code.
+We also need to change what we're adding to the path to `'../..'`, instead of `'.'` - this means that Sphinx should look two directories above the `conf.py` file to find our code.
 Finally, we need to add `'sphinx.ext.autodoc'` to the list of extensions.
 
 After making these changes, the file should look like this:
@@ -304,7 +311,7 @@ As we have discussed this morning, one of the most important things we can do to
 In order to help us format our code, we generally follow guidelines known as **style guides**.
 A style guide is a set of conventions that we agree upon with our colleagues, to ensure that everyone contributing to the same project is producing code which looks similar.
 
-While a group of developers may choose the write and agree upon a new style guide unique to each project, in practice many programming languages or problem domains have a single style guide or set of style guides which is adopted almost universally.
+While a group of developers may choose to write and agree upon a new style guide unique to each project, in practice many programming languages or problem domains have a single style guide or set of style guides which is adopted almost universally.
 For example in C++, the most popular is probably [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html), but there are also a number of others with popularity in a particular domain.
 The [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines) are an extensive reference intended more for the creators of software engineering tools, but may also be worth having a look at.
 In Python, although we do have a choice of style guides available, the [**PEP8**](https://www.python.org/dev/peps/pep-0008/) style guide is used in almost all cases.
@@ -416,7 +423,7 @@ That's enough for now, we'll be seeing much more about it soon.
 > For a maximum of three minutes, for each of the three things you found (i.e. a minute each), report back the following:
 >
 > 1. A few sentences description of what you've found
-> 2. A few sentences on how this benefits users of developers of the software
+> 2. A few sentences on how this benefits users or developers of the software
 {: .challenge}
 
 {% include links.md %}
