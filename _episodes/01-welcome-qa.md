@@ -9,6 +9,4 @@ objectives:
 keypoints:
 ---
 
-See topic [slides](../slides/01-introduction.pdf).
-
 {% include links.md %}

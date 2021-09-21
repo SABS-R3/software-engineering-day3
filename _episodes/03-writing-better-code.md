@@ -22,27 +22,27 @@ Executable code is for machines, whilst source code is for humans. Generally spe
 
 ## Set up training materials
 
-So let's download the training materials for this material from the GitHub code repository online. Go to [https://github.com/SABS-R3/2020-software-engineering-day3/tree/gh-pages](https://github.com/SABS-R3/2020-software-engineering-day3/tree/gh-pages) in a browser (any will do, although Firefox is already installed on the provided laptops). Select the green `Code` button, and then select `Download ZIP`, and then in Firefox selecting `Save File` at the dialogue prompt. This will download all the files within a single archive file. After it's finished downloading, we need to extract all files from the archive. Find where the file has been downloaded to (on the provided laptops this is `/home/sabsr3/Downloads`, then start a terminal. You can start a terminal by right-clicking on the desktop and selecting `Open in Terminal`. Assuming the file has downloaded to e.g. `/home/sabsr3/Downloads`, type the following within the Terminal shell:
+So let's download the training materials for this material from the GitHub code repository online. Go to [https://github.com/SABS-R3/software-engineering-day3/tree/gh-pages](https://github.com/SABS-R3/software-engineering-day3/tree/gh-pages) in a browser (any will do, although Firefox is already installed on the provided laptops). Select the green `Code` button, and then select `Download ZIP`, and then in Firefox selecting `Save File` at the dialogue prompt. This will download all the files within a single archive file. After it's finished downloading, we need to extract all files from the archive. Find where the file has been downloaded to (on the provided laptops this is `/home/sabsr3/Downloads`, then start a terminal. You can start a terminal by right-clicking on the desktop and selecting `Open in Terminal`. Assuming the file has downloaded to e.g. `/home/sabsr3/Downloads`, type the following within the Terminal shell:
 
 ~~~
 cd
-unzip /home/sabsr3/Downloads/2020-software-engineering-day3-gh-pages.zip
+unzip /home/sabsr3/Downloads/software-engineering-day3-gh-pages.zip
 ~~~
 {: .language-bash}
 
 As a reminder, the first `cd ` command without any arguments *changes our working directory* to our home directory (on the provisioned laptops, this is `/home/sabsr3`).
 
-The second command uses the unzip program to unpack the archive in your home directory, within a subdirectory called `2020-software-engineering-day3-gh-pages`. This subdirectory name is a little long to easily work with, so we'll rename it to something shorter:
+The second command uses the unzip program to unpack the archive in your home directory, within a subdirectory called `software-engineering-day3-gh-pages`. This subdirectory name is a little long to easily work with, so we'll rename it to something shorter:
 
 ~~~
-mv 2020-software-engineering-day3-gh-pages 2020-se-day3
+mv software-engineering-day3-gh-pages se-day3
 ~~~
 {: .language-bash}
 
 Change to the `code` directory within that new directory:
 
 ~~~
-cd 2020-se-day3/code
+cd se-day3/code
 ~~~
 {: .language-bash}
 
@@ -163,10 +163,10 @@ We'll be revisiting module-level docstrings later.
 
 A number of different docstring formats exist:
 
-- reST - based on reStructuredText. This is probably more prevalent nowadays, and is used by default in PyCharm
-- Epytext - historically based on a format of docstrings used for Java, in their javadoc documentation
-- Google - they have their own format
-- numpydoc - recommended by Numpy, based on the Google format, quite verbose
+- reST: based on reStructuredText. This is probably more prevalent nowadays, and is used by default in PyCharm
+- Epytext: historically based on a format of docstrings used for Java, in their javadoc documentation
+- Google: they have their own format
+- numpydoc: recommended by Numpy, based on the Google format, quite verbose
 
 The format we're using here for our examples is reST.
 
