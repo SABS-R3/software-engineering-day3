@@ -52,7 +52,7 @@ Some equivalent of this is possible in most programming languages (e.g. `#includ
 
 Once again, we'll use the temperature conversion code to illustrate this:
 
-~~~
+~~~ python
 # file: conversions.py
 
 def fahr_to_celsius(fahr):
@@ -63,7 +63,7 @@ def fahr_to_celsius(fahr):
     :param fahr: float temperature in Fahrenheit
     :returns: float temperature in Celsius
     """
-    celsius = ((fahr - 32) * (5/9))
+    celsius = (fahr - 32) * (5/9)
     return celsius
 
 def fahr_to_kelvin(fahr):
@@ -79,7 +79,7 @@ def fahr_to_kelvin(fahr):
 ~~~
 {: .language-python}
 
-~~~
+~~~ python
 # file: climate_analysis.py
 
 import conversions
@@ -103,13 +103,13 @@ This special file usually doesn't need to contain anything, but if it exists wit
 
 To put our temperature conversion code in a package:
 
-~~~
+~~~ bash
 mkdir conversions
 mv conversions.py conversions/temperature.py
 ~~~
 {: .language-bash}
 
-~~~
+~~~ python
 # file: climate_analysis.py
 
 from conversions import temperature
@@ -127,7 +127,7 @@ print(temperature.fahr_to_kelvin(32), 'K')
 
 If we wish to, we can shorten this a little bit by adding to our package's `__init__.py`:
 
-~~~
+~~~ python
 # file: __init__.py
 
 from .temperature import fahr_to_celsius, fahr_to_kelvin
@@ -139,7 +139,7 @@ Without the dot, Python will look for a `temperature` module outside of the curr
 
 So now we can use these functions directly from the package:
 
-~~~
+~~~ python
 # file: climate_analysis.py
 
 import conversions
@@ -169,7 +169,7 @@ print(conversions.fahr_to_kelvin(32), 'K')
 >
 > Take the Academics model (just the reusable class definitions) and turn it into a Python package named `academics` to be used from a script:
 >
-> ~~~
+> ~~~ python
 > from academics import Academic
 >
 > academics = [Academic(name) for name in ['Alice', 'Bob', 'Carol', 'David']]
@@ -200,7 +200,7 @@ When talking about type systems in different programming languages, there are tw
 The first is whether the language is **statically typed** or **dynamically typed**.
 In statically typed languages, each variable must have a type, usually set when it is defined - C++ is a statically typed language:
 
-~~~
+~~~ c++
 int count = 0;
 const double x = 10.;
 ~~~
@@ -208,7 +208,7 @@ const double x = 10.;
 
 In contrast, a dynamically typed language like Python, does not need / allow variables to have a type defined as the variable may hold multiple values of multiple different types over its lifetime.
 
-~~~
+~~~ python
 count = 0
 x = 10.
 
@@ -232,7 +232,7 @@ Type annotations make Python functions (and classes, etc.) look a little more li
 Function parameters are annotated with a colon followed by the type, while return values are annotated with an arrow then the type after the function parentheses.
 We can also add type annotations to ReST docstrings.
 
-~~~
+~~~ python
 def fahr_to_celsius(fahr: float) -> float:
     """Convert Fahrenheit to Celsius.
 
@@ -242,7 +242,7 @@ def fahr_to_celsius(fahr: float) -> float:
     :returns: temperature in Celsius
     :rtype: float
     """
-    celsius = ((fahr - 32) * (5/9))
+    celsius = (fahr - 32) * (5/9)
     return celsius
 
 def fahr_to_kelvin(fahr: float) -> float:
@@ -264,7 +264,7 @@ If you try to use an annotated function with arguments of a different type, we s
 
 To see how type annotations actually behave in practice, lets write another, very simple, function:
 
-~~~
+~~~ python
 def add_floats(a: float, b: float) -> float:
     return a + b
 
@@ -289,7 +289,7 @@ If we want to use these type annotations as part of our testing, we can use a to
 
 Remember back when we were looking at the procedural paradigm, before we knew about classes, and we used a nested data structure to represent our academics?
 
-~~~
+~~~ python
 academics = [
     {
         'name': 'Alice',
@@ -314,10 +314,10 @@ academics = [
 ~~~
 {: .language-python}
 
-Well, it just so happens that this data structure is almost exactly a **JSON** file.
-JavaScript Object Notation (JSON) is a very common format for handling config files and other complex data structures, which has libraries for processing it in almost all programming languages.
+Well, it just so happens that this data structure is almost exactly the same as a **JSON** file.
+JavaScript Object Notation (JSON) is a very common format for handling config files and other complex data structures, since it has libraries for processing it in almost all programming languages.
 
-In Python the `json` library is part of the standard library, so we don't need to worry about installing anything extra.
+In Python the `json` module is part of the standard library, so we don't need to worry about installing anything extra.
 
 Unfortunately we don't have time to cover this properly, but as usual, the Python documentation is a useful resource.
 See [JSON library](https://docs.python.org/3.7/library/json.html).
@@ -329,14 +329,14 @@ See [JSON library](https://docs.python.org/3.7/library/json.html).
 >
 > To run `pylint` on a Python file use:
 >
-> ~~~
+> ~~~ bash
 > pylint pi.py
 > ~~~
 > {: .language-bash}
 >
 > If you're familiar with C++, then to run `cpplint` on a C++ file use:
 >
-> ~~~
+> ~~~ bash
 > cpplint pi.cpp
 > ~~~
 > {: .language-bash}

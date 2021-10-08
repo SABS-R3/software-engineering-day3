@@ -29,7 +29,7 @@ Well, in addition to the benefits they give us of having the documentation right
 One of the nice features of Python is the integrated help available for almost every component.
 We can see this help text using the `help` function from a Python interpreter.
 
-~~~
+~~~ python
 help(list)
 ~~~
 {: .language-python}
@@ -65,7 +65,7 @@ class list(object)
 This help text should be available for every object in the Python standard library (every function, class, etc. not keywords like `for` and `if`).
 By adding docstrings to our functions and classes, we can get the same functionality for our own code.
 
-~~~
+~~~ python
 def fibonacci(n):
     """Calculate the Fibonacci number of the given integer.
 
@@ -86,7 +86,7 @@ def fibonacci(n):
 ~~~
 {: .language-python}
 
-~~~
+~~~ python
 help(fibonacci)
 ~~~
 {: .language-python}
@@ -99,9 +99,9 @@ We've just seen docstrings, but wouldn't it be great if you could take the docst
 Sphinx lets us do exactly that, but it is a little tricky to get set up properly.
 First we need to make our virtual environment and install Sphinx:
 
-~~~
+~~~ bash
 cd
-cd 2020-se-day3
+cd se-day3
 python3 -m venv venv
 source venv/bin/activate
 pip3 install sphinx
@@ -110,7 +110,7 @@ pip3 install sphinx
 
 Then we create a new directory `docs` in which to put our documentation and use the Sphinx quickstart tool to create the documentation structure for us:
 
-~~~
+~~~ bash
 mkdir docs
 cd docs
 sphinx-quickstart
@@ -146,14 +146,14 @@ For a list of supported codes, see
 https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
 > Project language [en]:
 
-Creating file /home/jag1e17/Documents/swc/2020-software-engineering-day3/code/docs/source/conf.py.
-Creating file /home/jag1e17/Documents/swc/2020-software-engineering-day3/code/docs/source/index.rst.
-Creating file /home/jag1e17/Documents/swc/2020-software-engineering-day3/code/docs/Makefile.
-Creating file /home/jag1e17/Documents/swc/2020-software-engineering-day3/code/docs/make.bat.
+Creating file /home/jag1e17/Documents/swc/se-day3/code/docs/source/conf.py.
+Creating file /home/jag1e17/Documents/swc/se-day3/code/docs/source/index.rst.
+Creating file /home/jag1e17/Documents/swc/se-day3/code/docs/Makefile.
+Creating file /home/jag1e17/Documents/swc/se-day3/code/docs/make.bat.
 
 Finished: An initial directory structure has been created.
 
-You should now populate your master file /home/jag1e17/Documents/swc/2020-software-engineering-day3/code/docs/source/index.rst and create other documentation
+You should now populate your master file /home/jag1e17/Documents/swc/se-day3/code/docs/source/index.rst and create other documentation
 source files. Use the Makefile to build the docs, like so:
    make builder
 where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
@@ -169,7 +169,7 @@ Finally, we need to add `'sphinx.ext.autodoc'` to the list of extensions.
 
 After making these changes, the file should look like this:
 
-~~~
+~~~ python
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -265,7 +265,7 @@ Documentation on this part of Sphinx is available at [this link](https://www.sph
 Now, we should be ready to build our documentation.
 First, change directory into the documentation directory, then we can build it.
 
-~~~
+~~~ bash
 cd docs
 make html
 ~~~
@@ -277,7 +277,7 @@ This isn't suitable for use in production, but is good for testing in cases like
 
 To run this webserver:
 
-~~~
+~~~ bash
 python -m http.server -d build/html
 ~~~
 {: .language-bash}
@@ -286,7 +286,7 @@ This tells Python to run the module `http.server` with the server running from t
 Then in a web browser navigate to `http://localhost:8000` and you should see your documentation page.
 If this doesn't work, then it might be the case that your build directory is named slightly differently - try running the server with the directory `_build/html`.
 
-~~~
+~~~ bash
 python -m http.server -d _build/html
 ~~~
 {: .language-bash}
@@ -334,7 +334,7 @@ Since the Python linters `flake8` and `pylint` are not part of the standard Pyth
 The C++ linter `cpplint` is actually written in Python, so we'll install that as well.
 So, using `pip` again:
 
-~~~
+~~~ bash
 cd code
 source venv/bin/activate
 pip install flake8 pylint cpplint
@@ -343,7 +343,7 @@ pip install flake8 pylint cpplint
 
 We can run these tools over our code from the command line:
 
-~~~
+~~~ bash
 flake8 academic.py
 ~~~
 {: .language-bash}
