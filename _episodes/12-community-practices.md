@@ -337,7 +337,7 @@ So, using `pip` again:
 ~~~ bash
 cd code
 source venv/bin/activate
-pip install flake8 pylint cpplint
+pip3 install flake8 pylint cpplint
 ~~~
 {: .language-bash}
 
