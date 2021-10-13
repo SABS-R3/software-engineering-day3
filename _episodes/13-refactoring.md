@@ -167,7 +167,7 @@ print(conversions.fahr_to_kelvin(32), 'K')
 > The Academics model is something that could be used as part of a much larger piece of software to help manage academic staff and their publications, such as a Current Research Information System (CRIS).
 > But, to do that we're going to need it in a suitable form - a Python package...
 >
-> Take the Academics model (just the reusable class definitions) and turn it into a Python package named `academics` to be used from a script:
+> Take the Academics model (just the reusable class definitions - not the testing code) and turn it into a Python package named `academics` to be used from a script:
 >
 > ~~~ python
 > from academics import Academic
@@ -230,7 +230,6 @@ Both of these viewpoints are to some degree true, so before using type annotatio
 
 Type annotations make Python functions (and classes, etc.) look a little more like C++ code.
 Function parameters are annotated with a colon followed by the type, while return values are annotated with an arrow then the type after the function parentheses.
-We can also add type annotations to ReST docstrings.
 
 ~~~ python
 def fahr_to_celsius(fahr: float) -> float:
@@ -238,9 +237,8 @@ def fahr_to_celsius(fahr: float) -> float:
 
     Uses standard Fahrenheit to Celsius formula.
 
-    :param float fahr: temperature in Fahrenheit
+    :param fahr: temperature in Fahrenheit
     :returns: temperature in Celsius
-    :rtype: float
     """
     celsius = (fahr - 32) * (5/9)
     return celsius
@@ -250,9 +248,8 @@ def fahr_to_kelvin(fahr: float) -> float:
 
     Uses standard Fahrenheit to Kelvin formula, making use of fahr_to_celsius function.
 
-    :param float fahr: temperature in Fahrenheit
+    :param fahr: temperature in Fahrenheit
     :returns: temperature in Kelvin
-    :rtype: float
     """
     kelvin = fahr_to_celsius(fahr) + 273.15
     return kelvin

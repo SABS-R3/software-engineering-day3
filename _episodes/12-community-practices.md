@@ -101,7 +101,7 @@ First we need to make our virtual environment and install Sphinx:
 
 ~~~ bash
 cd
-cd se-day3
+cd se-day3/code
 python3 -m venv venv
 source venv/bin/activate
 pip3 install sphinx
@@ -278,7 +278,7 @@ This isn't suitable for use in production, but is good for testing in cases like
 To run this webserver:
 
 ~~~ bash
-python -m http.server -d build/html
+python3 -m http.server -d build/html
 ~~~
 {: .language-bash}
 
@@ -287,7 +287,7 @@ Then in a web browser navigate to `http://localhost:8000` and you should see you
 If this doesn't work, then it might be the case that your build directory is named slightly differently - try running the server with the directory `_build/html`.
 
 ~~~ bash
-python -m http.server -d _build/html
+python3 -m http.server -d _build/html
 ~~~
 {: .language-bash}
 
@@ -394,7 +394,6 @@ It's actually a little more complicated than this, and the variants all have sli
 
 Which of these types of license you prefer is up to you and those you develop code with.
 
-
 ### Version Control
 
 We should mention version control here, as this is a very important aspect of collaborative software development - but we won't cover it properly, since that's coming up later in the course.
@@ -405,7 +404,6 @@ Using a site like GitHub (there are a few major alternatives, like GitLab or Bit
 Good use of these tools can make it much easier to develop software collaboratively.
 
 That's enough for now, we'll be seeing much more about it soon.
-
 
 > ## Action Stations (Again)!
 > This time we're going to look at a real software project which is an example of good practices.
