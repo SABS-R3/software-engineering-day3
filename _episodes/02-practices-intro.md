@@ -20,17 +20,17 @@ See topic [video lecture](https://youtu.be/gF52o1EA25Q), and [PowerPoint slides]
 
 > ## Action Stations!
 >
-> Total exercise time: 40 minutes
+> Total exercise time: 60 minutes
 > 
 > Imagine your project leader tells you that, quite unexpectedly, some important external collaborators are keen to work with and contribute to the development of some software developed by your group. The collaboration seeks to meet some new, exciting, and potentially publication lucrative, research goals. The software has already been stored within a GitHub repository as a first step to sharing the code, but the software needs to be made suitable for collaboration, and it's become obvious the software has a long way to go to be ready.
 >
 > In your assigned groups, first choose a scribe and reporter. The scribe will take notes, and the reporter will very briefly report back the top two findings to the class in the group discussion session after lunch.
 >
-> First, each take a look at the GitHub code repository at <https://github.com/softwaresaved/rf4> for about 20 minutes. Examine the contents of the repository (code, documentation, other assets). Then, for the next 15 minutes, as a group discuss what needs to be improved to get the software ready for your collaborators to understand it and contribute changes to it. (This course will cover Git and GitHub in a later lesson, so if you don't feel too confident to comment on these aspects just yet that's fine!).
+> First, each take a look at the GitHub code repository at <https://github.com/softwaresaved/rf4> for about 20 minutes. Examine the contents of the repository (code, documentation, other assets). Then, for the next 30 minutes (although you may finish before!), as a group discuss what needs to be improved to get the software ready for your collaborators to understand it and contribute changes to it. (This course will cover Git and GitHub in a later lesson, so if you don't feel too confident to comment on these aspects just yet that's fine!).
 > 
-> As you're conducting your investigation, make a list of issues on what would make it difficult to use, install, maintain, extend, and generally collaborate, with this software. What would be the top two things you would address first and why?
+> As you're conducting your investigation, make a list of issues on what would make it difficult to use, install, maintain, extend, and generally collaborate, with this software. What would be the top three things you would address first and why?
 >
-> Make notes on your findings, and then the reporter will briefly report back the top two things to the class. For a maximum of two minutes, for each of the two issues you found (i.e. a minute each), have the reporter in your group report back the following:
+> Make notes on your findings, and then the reporter will briefly report back the top three things to the class. For a maximum of two minutes, for each of the three issues you found, have the reporter in your group report back the following:
 >
 > 1. A couple of sentences description of the issue you found and how it affects users and/or developers.
 > 2. A couple of sentences on how you would improve this issue for those users and/or developers.
